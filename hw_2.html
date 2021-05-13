@@ -1,0 +1,95 @@
+<script>
+
+    // Задание 1
+
+    var a = 1, b = 1, c, d;
+    c = ++a; alert(c);           // 2 - Инкремент значения переменной "а" записанный в переменную "с"
+    d = b++; alert(d);           // 1 - Аналогичное действие, но в псотфиксной форме сначала выводится значение, а затем производится инкремент
+    c = (2 + ++a); alert(c);      // 5 - Изначально переменная "а" == 2, после инкремента == 3, 2 + 3 = 5
+    d = (2 + b++); alert(d);      // 4 - Изначально переменная "b" == 2, но инкремент выполняется после вывода, поэтому 2 + 2 = 4
+    alert(a);                    // 3 - Значение после инкремента в 8 строке
+    alert(b);                    // 3 - после вывода выполняется инкремент в 9 строке
+
+
+    // Задание 2
+
+    var a = 2;
+    var x = 1 + (a *= 2); // x = 1 + (a = a * 2) = 5
+    alert(x);
+
+    // Задание 3
+
+    function getRandom() {
+        var a = Math.random();
+        a = Math.floor(a * 10) - 5;
+        return (a);
+    }
+    var a = getRandom();
+    var b = getRandom();
+
+    var a = 0;
+    var b = 0;
+    if (a >= 0 && b >= 0) {
+        alert(a - b);
+    } else if (a < 0 && b < 0) {
+        alert(a * b);
+    } else if ((a < 0 && b >= 0) || (a >= 0 && b < 0)) {
+        alert(a + b);
+    }
+
+
+    //Задание 3
+
+
+    var b = "";
+    function numbers(a) {
+        if (a <= 15 && a >= 0) {
+            b += a + ",";
+            a = a + 1;
+            numbers(a);
+        } else {
+            alert(b);
+        }
+    }
+
+    var a = 9;
+
+    switch (a) {
+        case a:
+            numbers(a);
+            break;
+        default:
+            alert("Число вне диапазона заданных чилел");
+            break;
+    }
+
+
+    // Задание 4
+
+    function sum(a, b) {
+        var c = a + b;
+        return (c);
+    }
+    function difference(a, b) {
+        var c = a - b;
+        return (c);
+    }
+    function composition(a, b) {
+        var c = a * b;
+        return (c);
+    }
+    function div(a, b) {
+        var c = a / b;
+        return (c);
+    }
+
+    // Задание 5 НЕ ПОНЯЛ, С КАКОЙ ЦЕЛЬЮ ТУТ НЕОБХОДИМО ИСПОЛЬЗОВАТЬ SWITCH...
+
+    function mathOperation(arg1, arg2, operation) {
+        var c = operation(arg1, arg2);
+        return (c);
+    }
+    var z = mathOperation(3, 7, composition);
+    alert(z);
+
+</script>
