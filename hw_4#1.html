@@ -1,0 +1,37 @@
+<script>
+    function transform(num) {
+        if (num <= 999 && num >= 0) {
+            var convert = {};
+            if ((num / 100 >= 1)) {
+                var a = num / 100;
+                var b = String(a);
+                convert.hundreds = b[0];
+            } else {
+                convert.hundreds = 0;
+            }
+            num = num - (convert.hundreds * 100);
+            if ((num / 10 > 1)) {
+                var a = num / 10;
+                var b = String(a);
+                a.toFixed();
+                convert.dozens = b[0];
+
+            } else {
+                convert.dozens = 0;
+            }
+            num = num - (convert.dozens * 10);
+            if (num > 1) {
+                convert.units = num;
+            } else {
+                convert.units = 0;
+            }
+            console.log(convert);
+        } else {
+            console.log('Вы ввели не верное число!');
+            return (false);
+        }
+
+    }
+    var x = +prompt("введите число от 0 до 999");
+    transform(x);
+</script>
